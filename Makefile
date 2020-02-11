@@ -1,4 +1,3 @@
-VERSION := 1.0.0
 SHELL := /bin/bash
 GO := GO15VENDOREXPERIMENT=1 go
 NAME := go-demo-6
@@ -64,9 +63,4 @@ lint: vendor | $(PKGS) $(GOLINT) # ❷
 unittest: 
 	CGO_ENABLED=$(CGO_ENABLED) $(GO) \
 	test --run UnitTest -v
-
-functest: 
-	CGO_ENABLED=$(CGO_ENABLED) $(GO) \
-	test -test.v --run FunctionalTest \
-	--cover
 
